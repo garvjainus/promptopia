@@ -1,14 +1,14 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 
-const EditPrompt = dynamic(() => import("@components/EditPrompt"), {
+const UpdatePrompt = dynamic(() => import("@components/UpdatePrompt"), {
   suspense: true,
 });
 
 const Page = () => {
   return (
     <Suspense>
-      <EditPrompt />
+      <UpdatePrompt />
     </Suspense>
   );
 };
