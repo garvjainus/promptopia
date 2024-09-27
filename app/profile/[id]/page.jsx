@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 
-import Profile from '@components/profile';
+import Profile from '@components/Profile';
 
 const MyProfile = ({params}) => {
   const router = useRouter();
