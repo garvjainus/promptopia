@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
@@ -25,12 +25,15 @@ const MyProfile = ({params}) => {
   }, [params.id]);
 
   return (
-    <Profile    
-      name={userName + "'s"}
-      desc={`Welcome to ${userName}'s personalized profile page. Learn from their prompts to improve!`}
-      data={posts}
-    />
+    <Suspense>
+        <Profile    
+        name={userName + "'s"}
+        desc={`Welcome to ${userName}'s personalized profile page. Learn from their prompts to improve!`}
+        data={posts}
+        />
+    </Suspense>
   );
 };
+
 
 export default MyProfile;
